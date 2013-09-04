@@ -6,7 +6,7 @@ use EV;
 use Net::Curl::Easy qw(CURLE_COULDNT_CONNECT);
 use Net::Curl::Multi qw(CURLMSG_DONE CURL_SOCKET_TIMEOUT /^CURL_POLL_/ /^CURL_CSELECT_/ CURLMOPT_SOCKETFUNCTION CURLMOPT_TIMERFUNCTION);
 
-our $VERSION = '0.01';
+our $VERSION = '0.011';
 
 BEGIN {
 	Net::Curl::Multi->can('CURLMOPT_TIMERFUNCTION') or
@@ -149,7 +149,7 @@ __END__
 
 =head1 NAME
 
-Using Net::Curl::Multi with EV.
+Net::Curl::Multi::EV - Using Net::Curl::Multi with EV.
 
 =head1 SYNOPSIS
 
