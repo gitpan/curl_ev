@@ -6,13 +6,12 @@ use EV;
 use Net::Curl::Easy qw(CURLE_COULDNT_CONNECT);
 use Net::Curl::Multi qw(CURLMSG_DONE CURL_SOCKET_TIMEOUT /^CURL_POLL_/ /^CURL_CSELECT_/ CURLMOPT_SOCKETFUNCTION CURLMOPT_TIMERFUNCTION);
 
-our $VERSION = '0.011';
+our $VERSION = '0.012';
 
 BEGIN {
 	Net::Curl::Multi->can('CURLMOPT_TIMERFUNCTION') or
 		die "Net::Curl::Multi is missing timer callback,\nrebuild Net::Curl with libcurl 7.16.0 or newer\n";
 }
-
 
 
 sub curl_ev {
@@ -192,7 +191,7 @@ Nick Kostyria
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2013 by Nick Kostirya
+Copyright (C) 2013 by Nick Kostyria
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.14.2 or,

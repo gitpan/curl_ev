@@ -20,4 +20,4 @@ no_index:
 requires:
   EV: 4
   Net::Curl: 0.29
-version: 0.011
+version: 0.012
