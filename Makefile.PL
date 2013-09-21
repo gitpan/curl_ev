@@ -2,12 +2,12 @@ use strict;
 use warnings;
 
 use version;
-use ExtUtils::PkgConfig;
 use ExtUtils::MakeMaker;
 
 
 my $minimum_libcurl_ver = "7.16.0";
 my $libcurl_ver = eval {
+	require ExtUtils::PkgConfig;
 	my %curl = ExtUtils::PkgConfig->find('libcurl');
 	$curl{modversion};
 };
@@ -41,4 +41,9 @@ WriteMakefile(
 	VERSION_FROM => "CurlEV.pm",
 	PREREQ_PM    => { EV => 4, 'Net::Curl' => 0.29 },
 	PM           => { 'CurlEV.pm' => '$(INST_LIBDIR)/EV.pm' },
+	META_MERGE	 => {
+		recommends => {
+			"ExtUtils::PkgConfig" => 0,
+		},
+	},
 );
