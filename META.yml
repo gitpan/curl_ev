@@ -17,9 +17,7 @@ no_index:
   directory:
     - t
     - inc
-recommends:
-  ExtUtils::PkgConfig: 0
 requires:
   EV: 4
   Net::Curl: 0.29
-version: v0.01.3
+version: v0.01.4
